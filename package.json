@@ -39,8 +39,5 @@
     "jest": "^27.4.7",
     "prettier": "^2.5.1",
     "rollup": "^2.64.0"
-  },
-  "dependencies": {
-    "ml-matrix": "^6.8.2"
   }
 }
