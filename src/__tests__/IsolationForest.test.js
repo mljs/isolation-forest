@@ -15,7 +15,7 @@ describe('IsolationForest test', () => {
       [0.1, 0.1],
       [0.05, 0.1],
     ];
-    let anomalyDetector = new IsolationForest();
+    let anomalyDetector = new IsolationForest({ nEstimators: 50 });
     anomalyDetector.train(X);
     let result = anomalyDetector.predict([
       [200, 300],

@@ -24,27 +24,29 @@ Inspired from the following research paper : https://cs.nju.edu.cn/zhouzh/zhouzh
 ```js
 import IsolationForest from 'ml-isolation-forest';
 
-let trainingSet = [
+let X = [
   [200, 50],
   [0.3, 0.1],
-  [0.5, 0.7],
+  [0.5, 0.3],
   [0.2, 0.1],
   [0.1, 0.1],
   [0.2, 0.05],
   [0.3, 0.3],
   [0.4, 0.2],
-  [0.3, 0.5],
+  [0.3, 0.4],
   [0.1, 0.1],
-  [0.05, 0.05],
+  [0.05, 0.1],
 ];
-let anomalyDetector = new IsolationForest({nEstimators = 120});
-anomalyDetector.train(trainingSet);
+let anomalyDetector = new IsolationForest();
+anomalyDetector.train(X);
 let result = anomalyDetector.predict([
   [200, 300],
   [0, 0.1],
-  [0.2, 0.05],
+  [0.2, 0.1],
   [0.1, 0.2],
 ]);
+console.log(result);
+// 0.8138034871711983,0.36863229603385717,0.30237588018462913,0.3277350851756707
 ```
 
 ## [API Documentation](https://mljs.github.io/isolation-forest/)

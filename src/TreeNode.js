@@ -1,3 +1,6 @@
+import max from 'ml-array-max';
+import min from 'ml-array-min';
+
 import averagePathLengthFromRoot from './Utils';
 
 export default class TreeNode {
@@ -9,13 +12,15 @@ export default class TreeNode {
    * @constructor
    */
   constructor(options) {
-    this.depth = options.depth;
-    this.maxDepth = options.maxDepth;
+    if (options) {
+      this.depth = options.depth;
+      this.maxDepth = options.maxDepth;
+    }
   }
 
   /**
    * Train a node for the isolation forest given the training set
-   * @param {Matrix} trainingSet - training set used to train the isolation tree
+   * @param {number[][]} trainingSet - training set used to train the isolation tree
    * @param {number} currentDepth - depth of the node which is currently trained
    */
   train(trainingSet, currentDepth) {
@@ -27,8 +32,8 @@ export default class TreeNode {
       this.splitColumn = Math.floor(Math.random() * numberFeatures);
       const valuesForFeature = trainingSet.map((row) => row[this.splitColumn]);
 
-      const maxValueFeature = Math.max(...valuesForFeature);
-      const minValueFeature = Math.min(...valuesForFeature);
+      const maxValueFeature = max(valuesForFeature);
+      const minValueFeature = min(valuesForFeature);
 
       this.splitValue =
         Math.random() * (maxValueFeature - minValueFeature) + minValueFeature;
@@ -76,7 +81,7 @@ export default class TreeNode {
 
   /**
    * Returns the length of the path from the root to isolate the data point
-   * @param {Array} data - data point for which to predict the anomaly score
+   * @param {number[]} data - data point for which to predict the anomaly score
    * @param {number} currentPathLengthFromRoot - the current path length from the root
    * @returns
    */

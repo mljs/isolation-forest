@@ -8,14 +8,17 @@ export class IsolationForest {
    * @param {object} options - options for the IsolationForest
    * @param {number} [options.nEstimators=100] - number of trees/estimators to use in the forest
    */
-  constructor(nEstimators = 100) {
-    this.nEstimators = nEstimators;
+  constructor(options) {
+    if (options) {
+      this.nEstimators = options.nEstimators || 100;
+    }
+    this.nEstimators = this.nEstimators || 100;
     this.forest = [];
   }
 
   /**
    * Train the trees in the Isolation Forest with the given training set
-   * @param {Matrix} - trainingSet for building the isolation forest
+   * @param {number[][]} - trainingSet for building the isolation forest
    */
   train(trainingSet) {
     this.trainingSet = trainingSet;
@@ -30,8 +33,8 @@ export class IsolationForest {
 
   /**
    * Predict the anomalies in the set
-   * @param {Matrix} - set of data for which to find the anomalies
-   * @return {Array} - returns the anomaly scores for the data points
+   * @param {number[][]} - set of data for which to find the anomalies
+   * @return {number[]} - returns the anomaly scores for the data points
    */
   predict(data) {
     const anomalyScores = [];
@@ -44,12 +47,10 @@ export class IsolationForest {
         );
       }
       const averagePathLength = totalLengthsOfPathsFromRoot / this.nEstimators;
-      const anomalyScore = Math.pow(
-        2,
-        -(
-          averagePathLength / averagePathLengthFromRoot(this.trainingSet.length)
-        ),
-      );
+      const anomalyScore =
+        2 **
+        (-averagePathLength /
+          averagePathLengthFromRoot(this.trainingSet.length));
       anomalyScores.push(anomalyScore);
     }
     return anomalyScores;
