@@ -1,6 +1,6 @@
 {
   "name": "ml-isolation-forest",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Find anomalies in a set of data using the isolation forest algorithm",
   "main": "lib/index.js",
   "module": "src/index.js",
