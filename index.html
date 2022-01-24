@@ -1,0 +1,927 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset='utf-8'>
+  <title>ml-isolation-forest 0.0.0 | Documentation</title>
+  <meta name='description' content='Find anomalies in a set of data using the isolation forest algorithm'>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <link href='assets/bass.css' rel='stylesheet'>
+  <link href='assets/style.css' rel='stylesheet'>
+  <link href='assets/github.css' rel='stylesheet'>
+  <link href='assets/split.css' rel='stylesheet'>
+</head>
+<body class='documentation m0'>
+    <div class='flex'>
+      <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
+        <div class='py1 px2'>
+          <h3 class='mb0 no-anchor'>ml-isolation-forest</h3>
+          <div class='mb1'><code>0.0.0</code></div>
+          <input
+            placeholder='Filter'
+            id='filter-input'
+            class='col12 block input'
+            spellcheck='false'
+            autocapitalize='off'
+            autocorrect='off'
+            type='text' />
+          <div id='toc'>
+            <ul class='list-reset h5 py1-ul'>
+              
+                
+                <li><a
+                  href='#averagepathlengthfromroot'
+                  class="">
+                  averagePathLengthFromRoot
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#constructor'
+                  class="">
+                  constructor
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#isinnernode'
+                  class="">
+                  isInnerNode
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#isleafnode'
+                  class="">
+                  isLeafNode
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#numberdatapoints'
+                  class="">
+                  numberDataPoints
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#pathlengthfromroot'
+                  class="">
+                  pathLengthFromRoot
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#train'
+                  class="">
+                  train
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#constructor'
+                  class="">
+                  constructor
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#predict'
+                  class="">
+                  predict
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#train'
+                  class="">
+                  train
+                  
+                </a>
+                
+                </li>
+              
+            </ul>
+          </div>
+          <div class='mt1 h6 quiet'>
+            <a href='https://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+          </div>
+        </div>
+      </div>
+      <div id='split-right' class='relative overflow-auto height-viewport-100'>
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='averagepathlengthfromroot'>
+      averagePathLengthFromRoot
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/4700fa2a326e68a61ecbc57e06d3b2cf0ecc5b22/src/Utils.js#L6-L17'>
+      <span>src/Utils.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Returns the average path length of the nodes in a tree from the root given the number of training data points</p>
+
+    <div class='pre p1 fill-light mt0'>averagePathLengthFromRoot(sizeDataset: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>sizeDataset</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    the number of data training points
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        the average path length from the root
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='constructor'>
+      constructor
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/4700fa2a326e68a61ecbc57e06d3b2cf0ecc5b22/src/TreeNode.js#L11-L14'>
+      <span>src/TreeNode.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Constructor for a tree node used in an isolation forest</p>
+
+    <div class='pre p1 fill-light mt0'>new constructor(options: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</code>
+	    options for the TreeNode
+
+          </div>
+          
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>options.depth</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+  </td>
+  <td class='break-word'><span>the depth of the TreeNode
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>options.maxDepth</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+  </td>
+  <td class='break-word'><span>the maximum depth possible for the TreeNode
+</span></td>
+</tr>
+
+
+              
+            </tbody>
+          </table>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='isinnernode'>
+      isInnerNode
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/4700fa2a326e68a61ecbc57e06d3b2cf0ecc5b22/src/TreeNode.js#L62-L64'>
+      <span>src/TreeNode.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Verifies whether the current node is an inner node in the tree it belongs to</p>
+
+    <div class='pre p1 fill-light mt0'>isInnerNode(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        a boolean
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='isleafnode'>
+      isLeafNode
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/4700fa2a326e68a61ecbc57e06d3b2cf0ecc5b22/src/TreeNode.js#L54-L56'>
+      <span>src/TreeNode.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Verifies whether the current node is a leaf node in the tree it belongs to</p>
+
+    <div class='pre p1 fill-light mt0'>isLeafNode(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        a boolean
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='numberdatapoints'>
+      numberDataPoints
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/4700fa2a326e68a61ecbc57e06d3b2cf0ecc5b22/src/TreeNode.js#L70-L75'>
+      <span>src/TreeNode.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Returns the number of data points in the current node</p>
+
+    <div class='pre p1 fill-light mt0'>numberDataPoints(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        the number of data points
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='pathlengthfromroot'>
+      pathLengthFromRoot
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/4700fa2a326e68a61ecbc57e06d3b2cf0ecc5b22/src/TreeNode.js#L83-L96'>
+      <span>src/TreeNode.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Returns the length of the path from the root to isolate the data point</p>
+
+    <div class='pre p1 fill-light mt0'>pathLengthFromRoot(data: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>, currentPathLengthFromRoot: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>data</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
+	    data point for which to predict the anomaly score
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>currentPathLengthFromRoot</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    the current path length from the root
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='train'>
+      train
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/4700fa2a326e68a61ecbc57e06d3b2cf0ecc5b22/src/TreeNode.js#L21-L48'>
+      <span>src/TreeNode.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Train a node for the isolation forest given the training set</p>
+
+    <div class='pre p1 fill-light mt0'>train(trainingSet: Matrix, currentDepth: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>trainingSet</span> <code class='quiet'>(Matrix)</code>
+	    training set used to train the isolation tree
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>currentDepth</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    depth of the node which is currently trained
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='constructor'>
+      constructor
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/4700fa2a326e68a61ecbc57e06d3b2cf0ecc5b22/src/IsolationForest.js#L11-L14'>
+      <span>src/IsolationForest.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Create a new instance of IsolationForest</p>
+
+    <div class='pre p1 fill-light mt0'>new constructor(nEstimators: any, options: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>nEstimators</span> <code class='quiet'>(any
+            = <code>100</code>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</code>
+	    options for the IsolationForest
+
+          </div>
+          
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>options.nEstimators</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+  
+    (default <code>100</code>)
+  </td>
+  <td class='break-word'><span>number of trees/estimators to use in the forest
+</span></td>
+</tr>
+
+
+              
+            </tbody>
+          </table>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='predict'>
+      predict
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/4700fa2a326e68a61ecbc57e06d3b2cf0ecc5b22/src/IsolationForest.js#L36-L56'>
+      <span>src/IsolationForest.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Predict the anomalies in the set</p>
+
+    <div class='pre p1 fill-light mt0'>predict(data: any, null-null: Matrix): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>data</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>null-null</span> <code class='quiet'>(Matrix)</code>
+	    set of data for which to find the anomalies
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+        returns the anomaly scores for the data points
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='train'>
+      train
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/4700fa2a326e68a61ecbc57e06d3b2cf0ecc5b22/src/IsolationForest.js#L20-L29'>
+      <span>src/IsolationForest.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Train the trees in the Isolation Forest with the given training set</p>
+
+    <div class='pre p1 fill-light mt0'>train(trainingSet: any, null-null: Matrix)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>trainingSet</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>null-null</span> <code class='quiet'>(Matrix)</code>
+	    trainingSet for building the isolation forest
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+      </div>
+    </div>
+  <script src='assets/anchor.js'></script>
+  <script src='assets/split.js'></script>
+  <script src='assets/site.js'></script>
+</body>
+</html>
