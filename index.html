@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset='utf-8'>
-  <title>ml-isolation-forest 0.0.0 | Documentation</title>
+  <title>ml-isolation-forest 0.1.0 | Documentation</title>
   <meta name='description' content='Find anomalies in a set of data using the isolation forest algorithm'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' rel='stylesheet'>
@@ -15,7 +15,7 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>ml-isolation-forest</h3>
-          <div class='mb1'><code>0.0.0</code></div>
+          <div class='mb1'><code>0.1.0</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -147,7 +147,7 @@
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/4700fa2a326e68a61ecbc57e06d3b2cf0ecc5b22/src/Utils.js#L6-L17'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/1989075e441b4d92d02956cbdf0f618b71f82f39/src/Utils.js#L6-L17'>
       <span>src/Utils.js</span>
       </a>
     
@@ -223,7 +223,7 @@
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/4700fa2a326e68a61ecbc57e06d3b2cf0ecc5b22/src/TreeNode.js#L11-L14'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/1989075e441b4d92d02956cbdf0f618b71f82f39/src/TreeNode.js#L14-L19'>
       <span>src/TreeNode.js</span>
       </a>
     
@@ -325,7 +325,7 @@
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/4700fa2a326e68a61ecbc57e06d3b2cf0ecc5b22/src/TreeNode.js#L62-L64'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/1989075e441b4d92d02956cbdf0f618b71f82f39/src/TreeNode.js#L67-L69'>
       <span>src/TreeNode.js</span>
       </a>
     
@@ -387,7 +387,7 @@
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/4700fa2a326e68a61ecbc57e06d3b2cf0ecc5b22/src/TreeNode.js#L54-L56'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/1989075e441b4d92d02956cbdf0f618b71f82f39/src/TreeNode.js#L59-L61'>
       <span>src/TreeNode.js</span>
       </a>
     
@@ -449,7 +449,7 @@
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/4700fa2a326e68a61ecbc57e06d3b2cf0ecc5b22/src/TreeNode.js#L70-L75'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/1989075e441b4d92d02956cbdf0f618b71f82f39/src/TreeNode.js#L75-L80'>
       <span>src/TreeNode.js</span>
       </a>
     
@@ -511,7 +511,7 @@
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/4700fa2a326e68a61ecbc57e06d3b2cf0ecc5b22/src/TreeNode.js#L83-L96'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/1989075e441b4d92d02956cbdf0f618b71f82f39/src/TreeNode.js#L88-L101'>
       <span>src/TreeNode.js</span>
       </a>
     
@@ -520,7 +520,7 @@
 
   <p>Returns the length of the path from the root to isolate the data point</p>
 
-    <div class='pre p1 fill-light mt0'>pathLengthFromRoot(data: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>, currentPathLengthFromRoot: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</div>
+    <div class='pre p1 fill-light mt0'>pathLengthFromRoot(data: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>>, currentPathLengthFromRoot: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</div>
   
   
 
@@ -537,7 +537,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>data</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
+            <span class='code bold'>data</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>>)</code>
 	    data point for which to predict the anomaly score
 
           </div>
@@ -588,7 +588,7 @@
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/4700fa2a326e68a61ecbc57e06d3b2cf0ecc5b22/src/TreeNode.js#L21-L48'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/1989075e441b4d92d02956cbdf0f618b71f82f39/src/TreeNode.js#L26-L53'>
       <span>src/TreeNode.js</span>
       </a>
     
@@ -597,7 +597,7 @@
 
   <p>Train a node for the isolation forest given the training set</p>
 
-    <div class='pre p1 fill-light mt0'>train(trainingSet: Matrix, currentDepth: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</div>
+    <div class='pre p1 fill-light mt0'>train(trainingSet: any, currentDepth: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</div>
   
   
 
@@ -614,9 +614,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>trainingSet</span> <code class='quiet'>(Matrix)</code>
-	    training set used to train the isolation tree
-
+            <span class='code bold'>trainingSet</span> <code class='quiet'>(any)</code>
+	    
           </div>
           
         </div>
@@ -665,7 +664,7 @@
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/4700fa2a326e68a61ecbc57e06d3b2cf0ecc5b22/src/IsolationForest.js#L11-L14'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/1989075e441b4d92d02956cbdf0f618b71f82f39/src/IsolationForest.js#L11-L17'>
       <span>src/IsolationForest.js</span>
       </a>
     
@@ -674,7 +673,7 @@
 
   <p>Create a new instance of IsolationForest</p>
 
-    <div class='pre p1 fill-light mt0'>new constructor(nEstimators: any, options: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</div>
+    <div class='pre p1 fill-light mt0'>new constructor(options: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</div>
   
   
 
@@ -688,15 +687,6 @@
   
     <div class='py1 quiet mt1 prose-big'>Parameters</div>
     <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>nEstimators</span> <code class='quiet'>(any
-            = <code>100</code>)</code>
-	    
-          </div>
-          
-        </div>
       
         <div class='space-bottom0'>
           <div>
@@ -769,7 +759,7 @@
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/4700fa2a326e68a61ecbc57e06d3b2cf0ecc5b22/src/IsolationForest.js#L36-L56'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/1989075e441b4d92d02956cbdf0f618b71f82f39/src/IsolationForest.js#L39-L57'>
       <span>src/IsolationForest.js</span>
       </a>
     
@@ -778,7 +768,7 @@
 
   <p>Predict the anomalies in the set</p>
 
-    <div class='pre p1 fill-light mt0'>predict(data: any, null-null: Matrix): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+    <div class='pre p1 fill-light mt0'>predict(data: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>></div>
   
   
 
@@ -801,15 +791,6 @@
           
         </div>
       
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>null-null</span> <code class='quiet'>(Matrix)</code>
-	    set of data for which to find the anomalies
-
-          </div>
-          
-        </div>
-      
     </div>
   
 
@@ -818,7 +799,7 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>></code>:
         returns the anomaly scores for the data points
 
       
@@ -853,7 +834,7 @@
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/4700fa2a326e68a61ecbc57e06d3b2cf0ecc5b22/src/IsolationForest.js#L20-L29'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/isolation-forest/blob/1989075e441b4d92d02956cbdf0f618b71f82f39/src/IsolationForest.js#L23-L32'>
       <span>src/IsolationForest.js</span>
       </a>
     
@@ -862,7 +843,7 @@
 
   <p>Train the trees in the Isolation Forest with the given training set</p>
 
-    <div class='pre p1 fill-light mt0'>train(trainingSet: any, null-null: Matrix)</div>
+    <div class='pre p1 fill-light mt0'>train(trainingSet: any)</div>
   
   
 
@@ -881,15 +862,6 @@
           <div>
             <span class='code bold'>trainingSet</span> <code class='quiet'>(any)</code>
 	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>null-null</span> <code class='quiet'>(Matrix)</code>
-	    trainingSet for building the isolation forest
-
           </div>
           
         </div>
